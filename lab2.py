@@ -19,8 +19,12 @@ def main():
 
     # TODO: Step 3 - Add another movie to the data structure
     about_me['movies'].append({'title': 'TED', 'genre': 'Comedy'})
-    print_pizza_toppings(about_me)
+
     print_student_name_and_id(about_me)
+    toppings = ('Roasted Garlic', 'Aged Cheddar')
+    add_pizza_toppings(about_me, toppings)
+
+    print_pizza_toppings(about_me)
     return
 # TODO: Step 4 - Function that prints student name and ID	
 def print_student_name_and_id(data_struct):
@@ -34,19 +38,24 @@ def print_student_name_and_id(data_struct):
     
 # TODO: Step 5 - Function that adds pizza toppings to data structure
 def add_pizza_toppings(about_me, toppings):
-    
-    return
+    count = range(len(toppings))
+    for i in count:
+        about_me['pizza_toppings'].append(toppings[i])
+    about_me['pizza_toppings']= [topper.lower() for topper in about_me['pizza_toppings']]
+    about_me['pizza_toppings'].sort()
+    return 
 
 # TODO: Step 6 - Function that prints bullet list of pizza toppings
 def print_pizza_toppings(about_me):
+    print("My favourite pizza toppings are:")
     pizza_toppings = about_me['pizza_toppings']
     for i in pizza_toppings:
         print(f"- {i}")
-
     return
 
 # TODO: Step 7 - Function that prints comma-separated list of movie genres
 def print_movie_genres(about_me):
+
     return 
 
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
